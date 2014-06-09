@@ -44,27 +44,35 @@ public class Tracker {
     }
 
     LocationListener locationListenerGps = new LocationListener() {
-        public void onLocationChanged(Location location) {
+        @Override
+		public void onLocationChanged(Location location) {
             timer1.cancel();
             locationResult.gotLocation(location);
             lm.removeUpdates(this);
             lm.removeUpdates(locationListenerNetwork);
         }
-        public void onProviderDisabled(String provider) {}
-        public void onProviderEnabled(String provider) {}
-        public void onStatusChanged(String provider, int status, Bundle extras) {}
+        @Override
+		public void onProviderDisabled(String provider) {}
+        @Override
+		public void onProviderEnabled(String provider) {}
+        @Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {}
     };
 
     LocationListener locationListenerNetwork = new LocationListener() {
-        public void onLocationChanged(Location location) {
+        @Override
+		public void onLocationChanged(Location location) {
             timer1.cancel();
             locationResult.gotLocation(location);
             lm.removeUpdates(this);
             lm.removeUpdates(locationListenerGps);
         }
-        public void onProviderDisabled(String provider) {}
-        public void onProviderEnabled(String provider) {}
-        public void onStatusChanged(String provider, int status, Bundle extras) {}
+        @Override
+		public void onProviderDisabled(String provider) {}
+        @Override
+		public void onProviderEnabled(String provider) {}
+        @Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {}
     };
 
     class GetLastLocation extends TimerTask {

@@ -10,7 +10,7 @@ import com.example.sellup.viewFragments.ProfilerActivity;
 import com.example.sellup.viewFragments.UploadedActivity;
 
 public class ProfilePagerAdapter extends FragmentStatePagerAdapter{
-	String[] title ={"Deals","Products","Preferences","Profile"};
+	String[] title ={"Deals","Products","Preferences"};
 	public ProfilePagerAdapter(FragmentManager fm) {
 		super(fm);
 		// TODO Auto-generated constructor stub
@@ -26,9 +26,7 @@ public class ProfilePagerAdapter extends FragmentStatePagerAdapter{
 		case 1:
 			return new    UploadedActivity(); 
 		case 2:   
-			return new    ProductActivity(); 
-		case 3:
-			return new   ProfilerActivity(); 
+			return new    ProductActivity();  
 		default:
 			return new DealsActivity();
 			

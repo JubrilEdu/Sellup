@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sellup"
     android:versionCode="1"
@@ -19,9 +19,9 @@
     <application
         android:name="com.orm.SugarApp"
         android:allowBackup="true"
-        android:icon="@drawable/fow"
-        android:label="Mycel"
-        android:theme="@style/AppTheme" >
+        android:icon="@drawable/logo"
+        android:label="MYCEL"
+        android:theme="@style/Theme.AppCompat" >
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCKJRYDGu7XgD12VSyLGNQ0hs639U-kby0" />
@@ -40,16 +40,16 @@
 
         <activity
             android:name="com.example.sellup.SellActivity"
-            android:label="@string/app_name" >
-          
+           android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
             android:name="com.example.sellup.SignupActivity"
-            android:label="@string/title_activity_signup" >
+            android:theme="@android:style/Theme.NoTitleBar"
+             >
         </activity>
         <activity
             android:name="com.example.sellup.ProfileActivity"
-            android:label="@string/title_activity_profile" >
+             >
         </activity>
         <activity
             android:name="com.example.sellup.DealsActivity"
@@ -79,15 +79,19 @@
             android:name="com.example.sellup.ProductActivity"
             android:label="@string/title_activity_product" >
         </activity>
-        
         <activity
             android:name="com.example.sellup.SplashActivity"
-            android:label="@string/title_activity_splash" >
-              <intent-filter>
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:noHistory="true">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.sellup.DealAdapter"
+            android:label="@string/title_activity_deal_adapter" >
         </activity>
     </application>
 

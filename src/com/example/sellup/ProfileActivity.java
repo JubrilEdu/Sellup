@@ -4,9 +4,7 @@ import com.example.sellup.adapters.ProfilePagerAdapter;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
-import android.net.wifi.p2p.WifiP2pManager.ActionListener;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -14,7 +12,7 @@ import android.support.v4.view.ViewPager;
 @SuppressLint("NewApi")
 public class ProfileActivity extends FragmentActivity implements ActionBar.TabListener{
 
- String[] tabHead =  {"Hot deals","Products","Preferences","Profile"};
+ String[] tabHead =  {"Hot deals","Products","Preferences"};
  ViewPager viewpager1;
  
 	
@@ -24,6 +22,7 @@ public class ProfileActivity extends FragmentActivity implements ActionBar.TabLi
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_profile);	
 	 ActionBar actionbar= getActionBar();
+	   actionbar.setTitle("");
 		actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		viewpager1 = (ViewPager) findViewById(R.id.pager);
 		viewpager1.setAdapter(new ProfilePagerAdapter(getSupportFragmentManager()));

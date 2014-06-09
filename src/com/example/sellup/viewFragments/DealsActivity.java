@@ -7,10 +7,7 @@ import java.util.Locale;
 import com.example.sellup.R;
 import com.example.sellup.Tracker;
 import com.example.sellup.Tracker.LocationResult;
-import com.google.android.gms.location.LocationClient;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
@@ -19,8 +16,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -33,6 +28,7 @@ public class DealsActivity extends Fragment {
 	private Context context;
 	private static String presentLocation = "You";
 
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 		
@@ -47,6 +43,7 @@ public class DealsActivity extends Fragment {
 		// TODO Auto-generated method stub
 		super.onStart();
 		LocationResult locResult=new LocationResult() {
+		@Override
 		@SuppressLint("NewApi")
 		public void gotLocation(Location location) {
 			// TODO Auto-generated method stub
@@ -86,5 +83,17 @@ public class DealsActivity extends Fragment {
 	tracker.getLocation(getActivity().getApplicationContext(), locResult);
 	
 
-}}
+}
+
+	  public class Deals{
+		public static final String TAG_NAME="name";
+		public static final  String TAG_EMAIL="email";
+		public static final String TAG_ADDRESS="address";
+		public static final  String TAG_DEAL="deal";
+		
+		  
+		  
+	  }	
+
+}
 

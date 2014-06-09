@@ -2,7 +2,6 @@ package com.example.sellup.viewFragments;
 
 import java.util.List;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,10 +14,12 @@ import com.example.sellup.R;
 import com.example.sellup.adapters.ProfilePagerAdapter;
 import com.example.sellup.adapters.SessionHandler;
 import com.example.sellup.models.Profile;
+import com.orm.SugarRecord;
 
 public class ProfilerActivity extends Fragment {
 	TextView username,address,password,email;
    SessionHandler session ;
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 	    View rootView = inflater.inflate(R.layout.fragment_profiler, container, false);
@@ -26,7 +27,7 @@ public class ProfilerActivity extends Fragment {
         TextView address = (TextView) rootView.findViewById(R.id.address);
         TextView phone = (TextView) rootView.findViewById(R.id.phone);
         TextView email = (TextView) rootView.findViewById(R.id.email);
-         List<Profile> Name = Profile.find(Profile.class,"checker= ?", "1");
+         List<Profile> Name = SugarRecord.find(Profile.class,"checker= ?", "1");
          int length = Name.size();
          
          Log.d("Profile List",String.valueOf(length));
